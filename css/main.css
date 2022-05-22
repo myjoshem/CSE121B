@@ -1,0 +1,65 @@
+
+
+/*----------  resets document margins to zero and preps for box sizing  ----------*/
+
+* { margin: 0; box-sizing: border-box; }
+
+
+
+/*----------  margin set this way will center in viewport, setting max-width
+ keeps it from filling large viewports, line height adds some space between lines
+ and when resizing, larger fonts do not overlap  ----------*/
+
+
+body { 
+    margin: 0 auto;
+    max-width: 1000px;
+    line-height: 42px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: black;
+}
+
+h1 {
+    font-size: 3rem;
+    padding: 1em;
+    color: rgb(226, 226, 245);
+}
+
+h2 {
+    font-size: 1.75rem;
+    text-align: center;
+    border-bottom: 2px solid purple;
+}
+
+header, footer, footer a {
+    margin: 0 auto;
+    text-align: center;
+    background-color: purple;
+    color: rgb(226, 226, 245);
+}
+
+/*----------  floats to right of h1 in header, inherits text-align from header,
+ so it needs reset here  ----------*/
+header img {
+    /*  padding: 0;
+    margin: 0;*/
+    float: left;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 140px;
+}
+
+/*----------  all margins are zero, add padding and shrink font  ----------*/
+footer {
+    padding: 1em;
+    font-size: .85rem;
+}
+
+/*----------  add padding and set max width in relation to body to indent,
+margin will autocenter content ----------*/
+main {
+    margin: 0 auto;
+    padding: 1em;
+    max-width: 80%;
+}

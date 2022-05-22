@@ -1,0 +1,30 @@
+/* .style1 {
+    margin: 0 auto;
+    border: 1px solid #bbb;
+    padding: 5px;
+    background-color: #eee;
+    line-height: 1.5em;
+
+
+  * {
+    line-height: 1.5em; em, relative to parent, so line-spacing reflects good accessibility design?
+  }
+
+  */
+  body {
+    margin: 0 auto;
+    max-width: 1000px;
+    line-height: 42px;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+    color: black;
+  }
+  
+  ul li.summary {
+    list-style-type: none;
+    margin-left: -14px;
+  }
+  
+  ul #click {
+    list-style-type: none;
+    margin-left: -40px;
+  }
