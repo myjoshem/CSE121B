@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  </head>
+  <body>
+	<div>
+    <h4>Choose an Adventure:</h4>
+    <p>1 - Slay the dragon</p>
+    <p>2 - Rescue the princess</p>
+    <p>3 - Steal the magic wand</p>
+    <button onclick="playGame()">Play!</button>
+</div>
+<div>
+    <p>Health: <span id="health"></span></p>
+</div>
+<div>
+    <button onclick="quit()">Quit</button>
+    <button onclick="reset()">Reset</button>
+</div>
+
+  </body>
+  <script>
+    var health;
+    var iQuit = false;
+    var adventureHistoryArray = [];
+	var healthHistoryArray = [100];
+
+    function quit() { 
+        iQuit = true; 
+        reset();
+    }
+    
+    function reset() { 
+      health = 100;
+      document.getElementById('health').innerText = health;
+      adventureHistoryArray = [];
+	  healthHistoryArray = [100];
+      iQuit = false;
+    }
+	
+    function playGame() {
+       reset();
+                 
+       while (health > 0 && quit != true) { 
+        var next = prompt("What do you want to do next? You can a) slay the dragon, b) rescue your friend, or c) steal the magic wand. Type 'quit' to quit.");
+        {
+           if (next == "a") {
+                health -= 50; 
+                //document.getElementById('health').innerText = health;          
+                adventureHistoryArray.push("You slayed the dragon");
+            } else if
+                (next == "b") {
+                    health -= 15;
+                    adventureHistoryArray.push("You rescued your friend");
+            } else if
+                (next == "c") {
+                    health += 25;
+                    adventureHistoryArray.push("You stole the magic wand");
+            } else if 
+                (next == "quit") {
+                    iQuit = true;
+                    alert("Sorry to see you go, Goodbye");
+                    document.getElementById('health').innerText = health;
+                    return;
+            } else if 
+                (next === null) { 
+                    document.getElementById('health').innerText = health;
+                    return; 
+            } else 
+
+            { alert("This is not a valid response, try again"); }
+            }
+            healthHistoryArray.push(health);
+            alert(adventureHistoryArray[adventureHistoryArray.length-1] + ", and your new health is: " + health);
+            console.log(healthHistoryArray);
+            console.log(health);
+            console.log(adventureHistoryArray);
+            document.getElementById('health').innerText = health;
+            }
+        }
+	</script>
+</html>
