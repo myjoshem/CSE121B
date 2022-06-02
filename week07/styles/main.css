@@ -13,7 +13,7 @@ div {
 }
 
 footer {
-    background-color: gray;
+    background-color: rgb(132, 119, 146);
     color: white;
     padding: 5px;
     text-align: center;
@@ -22,6 +22,7 @@ footer {
 header {
     margin: auto;
     text-align: center;
+    background-color: rgb(132, 119, 146);
 }
 
 img {
@@ -78,7 +79,6 @@ section {
     flex-direction: column;
     align-items: center;
 }
-
 
 /* Class Selectors */
 .active {
