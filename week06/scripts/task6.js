@@ -1,5 +1,5 @@
 /* Lesson 6 */
-
+// formats HTML for output to page
 function displayOutput(input) {
       let article = document.createElement("article");
   
@@ -17,22 +17,35 @@ function displayOutput(input) {
       article.appendChild(sourceDate);
   
       document.querySelector("#quotes").appendChild(article);
-
 }
 
+/* function sortList(array, sort)
+array.filter((array) => {
+  const aTopic = array.topic;
+ return aTopic === sortBy;
+}) */
+
+/* function sortList (quoteList) {
+  const aTopic = quoteList.topic;
+ return aTopic === sortBy;
+};
+ */
+
+// global array that holds data fetched
 var quoteList = [];
 
+// evaluates output, eliminating blank quotes
 const output = (quotes) => {
       quotes.forEach((quoteObject) => {
       let testBlank = quoteObject.quote;
       if (testBlank.length > 1)
           return displayOutput(quoteObject);
-
      else {
       return;
     }
   })};
-  
+
+ // retrieve data from external source 
 const getQuotes = async () => {
     const response = await fetch(
       "https://run.mocky.io/v3/6cb88ab0-2815-45cf-a429-4f76551d1746"
@@ -46,6 +59,7 @@ const reset = () => {
     document.querySelector("#quotes").innerHTML = "";
   };
 
+  // sorts by selected drop down option, organized by 'topic'. Calls 'output' function.
 const sortBy = () => {
     reset();
   
@@ -53,53 +67,28 @@ const sortBy = () => {
     
     switch (sortBy) {
       case "Atonement":
-        output(
-          quoteList.sort((topic1, topic2) => {
-            let topicOne = topic1.topic.toLowerCase();
-            let topicTwo = topic2.topic.toLowerCase();
-            if (topicOne < topicTwo) return -1;
-            else if (topicOne > topicTwo) return 1;
-            else return 0;
+        output(quoteList.filter((quoteList) => {
+            const aTopic = quoteList.topic;
+           return aTopic === sortBy;
           })
         );
         break;
-      case "templeNameAscending":
+      case "Family":
         output(
-          quoteList.sort((topic1, topic2) => {
-            let topicOne = topic1.topic.toLowerCase();
-            let topicTwo = topic2.topic.toLowerCase();
-            if (topicOne < topicTwo) return -1;
-            else if (topicOne > topicTwo) return 1;
-            else return 0;
+          quoteList.filter((quoteList) => {
+            const aTopic = quoteList.topic;
+           return aTopic === sortBy;
           })
         );
         break;
-      case "templeNameDescending":
+      case "Addictions":
         output(
-          quoteList.sort((topic1, topic2) => {
-            let topicOne = topic1.topic.toLowerCase();
-            let topicTwo = topic2.topic.toLowerCase();
-            if (topicOne > topicTwo) return -1;
-            else if (topicOne < topicTwo) return 1;
-            else return 0;
+          quoteList.filter((quoteList) => {
+            const aTopic = quoteList.topic;
+           return aTopic === sortBy;
           })
         );
         break;
-        case "templesAfter2000":
-            output(
-                quoteList.sort((topic1, topic2) => {
-                  let topicOne = topic1.topic.toLowerCase();
-                  let topicTwo = topic2.topic.toLowerCase();
-                  if (topicOne < topicTwo) return -1;
-                  else if (topicOne > topicTwo) return 1;
-                  else return 0;
-                }).filter((quoteList) => {
-                    let sourceDate = quoteList.sourceDate;
-                    let sourceYear = sourceDate.substring(sourceDate.length -4);
-                    return sourceYear > 1999;
-                }
-              ))
-              break;
         default:
         output(
           quoteList.sort((topic1, topic2) =>
@@ -114,3 +103,6 @@ const sortBy = () => {
         break;
     }
   };
+
+  // do not forget to listen!!
+  document.querySelector("#sortBy").addEventListener("change", sortBy);
