@@ -1,0 +1,10 @@
+Quotes Mock URL:
+https://run.mocky.io/v3/6cb88ab0-2815-45cf-a429-4f76551d1746
+Quotes Secret delete link
+https://designer.mocky.io/manage/delete/6cb88ab0-2815-45cf-a429-4f76551d1746/jCX9Ads0iRt9Z7fwaA0C4FlL2f2Pyj0FOlBa
+
+Temples sample Mock URL
+https://run.mocky.io/v3/c95a899f-2669-4f16-8e93-c1d589b40864
+
+Temples secret delete link 
+https://designer.mocky.io/manage/delete/c95a899f-2669-4f16-8e93-c1d589b40864/yIA6uLpIbuicfU1eEqP2pxsAzk66AlnpXHGI
